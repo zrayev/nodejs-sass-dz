@@ -30,13 +30,7 @@
       left: -1 * (column-width(map-deep-get($grid, 16, width), map-deep-get($grid, 16, gutter), 16) * $i + map-deep-get($grid, 16, gutter) * $i);
     }
 
-    .alpha {
-      margin-left: 0;
-    }
-
-    .omega {
-      margin-right: 0;
-    }
+    @include alpha-omega;
   }
 }
 

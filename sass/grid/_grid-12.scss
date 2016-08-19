@@ -9,7 +9,7 @@
 
   @for $i from 1 through 12 {
     .grid_#{$i} {
-      width: columns-width(map-deep-get($grid, 12, width), map-deep-get($grid, 12, gutter) , 12, $i);
+      width: columns-width(map-deep-get($grid, 12, width), map-deep-get($grid, 12, gutter), 12, $i);
       margin: 1em map-deep-get($grid, 12, gutter) / 2;
       float: left;
     }
@@ -30,13 +30,7 @@
       left: -1 * (column-width(map-deep-get($grid, 12, width), map-deep-get($grid, 12, gutter), 12) * $i + map-deep-get($grid, 12, gutter) * $i);
     }
 
-    .alpha {
-      margin-left: 0;
-    }
-
-    .omega {
-      margin-right: 0;
-    }
+    @include alpha-omega;
   }
 }
 
