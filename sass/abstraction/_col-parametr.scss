@@ -1,11 +1,7 @@
-@mixin container($grid, $key, $gs) {
-  .container_#{$key} {
-    background-image: url(quote($images-path + '/#{$key}_col.gif'));
-    width: map-deep-get($gs, 'width');
+@mixin col-pull($grid, $key, $i) {
+  left: -1 * (column-width(map-deep-get($grid, $key, width), map-deep-get($grid, $key, gutter), $key) * $i + map-deep-get($grid, $key, gutter) * $i);
+}
 
-    p {
-      border: 1px solid $color-borders-main;
-      text-align: center;
-    }
-  }
+@mixin col-push($grid, $key, $i) {
+  left: column-width(map-deep-get($grid, $key, width), map-deep-get($grid, $key, gutter), $key) * $i + map-deep-get($grid, $key, gutter) * $i;
 }
