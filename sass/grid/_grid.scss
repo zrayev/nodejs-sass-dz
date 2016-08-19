@@ -2,12 +2,11 @@
 
   .container_#{$key} {
     @include background($grid, $key, $gs);
-
-    @include paragraph();
-
     @for $i from 1 through $key {
+
       .grid_#{$i} {
         @include grid($grid, $key, $i);
+        @include paragraph($grid, $key, $i);
       }
 
       .prefix_#{$i} {
