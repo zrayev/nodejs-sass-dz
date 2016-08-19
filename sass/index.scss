@@ -9,6 +9,10 @@
 @import "abstraction/clearfix";
 @import "abstraction/grid-column";
 @import "abstraction/column-margin";
+@import "abstraction/alpha";
+@import "abstraction/col-parametr";
+@import "abstraction/container";
+
 
 // Import base styles.
 @import "base/clearfix";
@@ -18,6 +22,4 @@
 @import "base/paragraphs";
 
 // Import grid styles
-@import "grid/grid-12";
-@import "grid/grid-16";
-@import "grid/grid-24";
+@import "grid/grid";

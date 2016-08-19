@@ -1,0 +1,21 @@
+@mixin background($grid, $key, $gs) {
+  background-image: url(quote($images-path + '/#{$key}_col.gif'));
+  width: map-deep-get($gs, 'width');
+}
+
+@mixin paragraph($grid, $key, $i) {
+  > p {
+    border: 1px solid $color-borders-main;
+    text-align: center;
+    &:before {
+      content: "#{$i}/#{$key}";
+      display: block;
+    }
+  }
+}
+
+@mixin grid($grid, $key, $i) {
+  width: columns-width(map-deep-get($grid, $key, width), map-deep-get($grid, $key, gutter), $key, $i);
+  margin: 1em map-deep-get($grid, $key, gutter) / 2;
+  float: left;
+}

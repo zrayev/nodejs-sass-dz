@@ -1,0 +1,31 @@
+@each $key, $gs in $grid {
+
+  .container_#{$key} {
+    @include background($grid, $key, $gs);
+    @for $i from 1 through $key {
+
+      .grid_#{$i} {
+        @include grid($grid, $key, $i);
+        @include paragraph($grid, $key, $i);
+      }
+
+      .prefix_#{$i} {
+        @include col-prefix($grid, $key, $i);
+      }
+
+      .suffix_#{$i} {
+        @include col-suffix($grid, $key, $i);
+      }
+
+      .push_#{$i} {
+        @include col-push ($grid, $key, $i);
+      }
+
+      .pull_#{$i} {
+        @include col-pull ($grid, $key, $i);
+      }
+
+      @include alpha-omega;
+    }
+  }
+}
